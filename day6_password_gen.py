@@ -12,7 +12,8 @@ def check_strength(pwd):
         any(c.isdigit() for c in pwd),
         any(c in "!@#$%^&*" for c in pwd)
     ])
-    return ["Trash", "Weak", "Mid", "Strong", "G-Wagon Level"][score]
+    levels = ["Trash", "Weak", "Mid", "Strong", "G-Wagon Level"]
+    return levels[min(score, 4)]
 
 if __name__ == "__main__":
     pwd = gen_password(16)
